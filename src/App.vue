@@ -1,30 +1,34 @@
 <template>
   <div id="app">
-    <app-nav></app-nav>
+    <app-banner></app-banner>
+    <app-links :links="links"></app-links>
   </div>
 </template>
 
 <script>
 
-import nav from './components/nav.vue';
+import banner from './components/Banner.vue';
+import links from './components/Links.vue';
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      links: [
+        {url: '/#about', display: 'About'},
+        {url: '/#projects', display: 'Projects'},
+      ]
     }
   },
   components: {
-    'appNav': nav
+    'appBanner': banner,
+    'appLinks': links
   }
 };
 </script>
 
 <style>
 body {
-  background-image: url('./assets/talk.jpg');
-  background-size: cover;
   margin: 0px;
 
   font-family: 'Roboto', sans-serif;
